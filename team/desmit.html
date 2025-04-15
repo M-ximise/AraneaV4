@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        // Check if user is logged in
+        if (!sessionStorage.getItem('isLoggedIn')) {
+            window.location.href = '../login.html';
+        }
+
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('isLoggedIn');
+            window.location.href = '../login.html';
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        body::before {
+            content: none;
+        }
+        
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+            border-bottom: 3px solid #8c2f39;
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            color: #8c2f39;
+            margin-top: 5px;
+        }
+        .team-member {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .member-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .member-photo {
+            width: 200px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-right: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8c2f39;
+            font-weight: bold;
+            font-size: 48px;
+            overflow: hidden;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .member-info {
+            flex: 1;
+        }
+        .member-name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .member-title {
+            font-size: 20px;
+            color: #8c2f39;
+            margin-bottom: 15px;
+        }
+        .member-bio {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            border-left: 4px solid #8c2f39;
+            padding-left: 15px;
+        }
+        .expertise-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .expertise-tag {
+            background-color: rgba(140, 47, 57, 0.1);
+            color: #8c2f39;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .back-button {
+            display: inline-block;
+            background-color: #8c2f39;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: background-color 0.2s;
+        }
+        .back-button:hover {
+            background-color: #732630;
+        }
+        .logout-button {
+            background-color: #8c2f39;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .logout-button:hover {
+            background-color: #732630;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <div class="logo-area">
+                <h1 class="title">ARANEA CAPITAL II</h1>
+                <div class="subtitle">DEEP TECH & BIOTECH INVESTMENT FUND</div>
+            </div>
+            <button onclick="logout()" class="logout-button">Logout</button>
+        </div>
+
+        <a href="../aranea-capital-design.html" class="back-button">← Back to Main Page</a>
+
+        <div class="team-member">
+            <div class="member-header">
+                <div class="member-photo">
+                    <img src="../images/max_profile.jpg" alt="Max de Smit">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Max de Smit</div>
+                    <div class="member-title">Founder & Partner</div>
+                    <div class="member-bio">
+                        Max brengt gerichte expertise op het gebied van biotechnologische en software ontwikkeling in combinatie met een sterke achtergrond in financial analysis naar Aranea Capital. Met deze achtergrond essentieel voor het proces waarbij Aranea Management innovatieve investeringsmogelijkheden identificeert, beoordeelt, verwerkt en aanbied aan de investeerder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Expertise</div>
+                <div class="expertise-list">
+                    <div class="expertise-tag">Biotechnology</div>
+                    <div class="expertise-tag">Software Development</div>
+                    <div class="expertise-tag">Investment Management</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Ervaring</div>
+                <div class="member-bio">
+                    <p>Max heeft 3 jaar gespecialiseerde ervaring in de biotechnologische sector door zijn werkzaamheden bij Remicine Biosciences en Remodac Technologies. Hij heeft expertise opgebouwd in biotechnologische financiering, ondersteuning bij M&A-transacties, het navigeren door regulatoire frameworks en de ontwikkeling van innovatieve software in de gezondheidszorg.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Opleiding</div>
+                <div class="member-bio">
+                    <p>• Nyenrode Business Universiteit - Bachelor of Science in Business Administration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
